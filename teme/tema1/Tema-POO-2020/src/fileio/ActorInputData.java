@@ -3,6 +3,7 @@ package fileio;
 import actor.ActorsAwards;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -27,6 +28,11 @@ public final class ActorInputData {
      * awards won by the actor
      */
     private Map<ActorsAwards, Integer> awards;
+
+    /**
+     * ratings of an actor based on movies and serials rating
+     */
+    private final Map<String, Double> actorsAverage = new HashMap<>();
 
     public ActorInputData(final String name, final String careerDescription,
                           final ArrayList<String> filmography,
@@ -72,5 +78,37 @@ public final class ActorInputData {
                 + ", careerDescription='"
                 + careerDescription + '\''
                 + ", filmography=" + filmography + '}';
+    }
+
+    public Map<String, Double> getActorsAverage() {
+        return actorsAverage;
+    }
+
+    /**
+     * The method computes the rating of an actor
+     * by summing the ratings of the movies and series
+     * they played in
+     * @return rating of an actor
+     */
+    public Double average() {
+        Double sum = 0.0;
+        for (Map.Entry<String, Double> show : actorsAverage.entrySet()) {
+            sum += show.getValue();
+        }
+
+        return sum / actorsAverage.size();
+    }
+
+    /**
+     * @return the total number of awards won by an actor
+     */
+    public Integer totalAwards() {
+        Integer sum = 0;
+
+        for (Integer noAwards : awards.values()) {
+            sum += noAwards;
+        }
+
+        return sum;
     }
 }

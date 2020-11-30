@@ -25,6 +25,22 @@ public abstract class ShowInput {
      */
     private final ArrayList<String> genres;
 
+    /**
+     * The order number of the show in the database
+     */
+    private int orderNumber;
+
+    /**
+     * Number of views of a show
+     */
+    private int noViews = 0;
+
+    /**
+     * How many times is a show in
+     * the favorite list of an user
+     */
+    private int favorite = 0;
+
     public ShowInput(final String title, final int year,
                      final ArrayList<String> cast, final ArrayList<String> genres) {
         this.title = title;
@@ -47,5 +63,43 @@ public abstract class ShowInput {
 
     public final ArrayList<String> getGenres() {
         return genres;
+    }
+
+    public final int getOrderNumber() {
+        return orderNumber;
+    }
+
+    public final void setOrderNumber(int orderNumber) {
+        this.orderNumber = orderNumber;
+    }
+
+    /**
+     * This method computes the average
+     * to find the rating of the show
+     * @return the rating of a show
+     */
+    public abstract double average();
+
+    public final int getNoViews() {
+        return noViews;
+    }
+
+    /**
+     *
+     * @param noViews number of views of a show
+     */
+    public final void setNoViews(int noViews) {
+        this.noViews += noViews;
+    }
+
+    public final int getFavorite() {
+        return favorite;
+    }
+
+    /**
+     * Sets how many times is a show in a user's favorite list
+     */
+    public final void setFavorite() {
+        this.favorite += 1;
     }
 }

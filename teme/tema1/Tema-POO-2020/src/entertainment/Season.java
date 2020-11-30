@@ -53,5 +53,27 @@ public final class Season {
                 + duration
                 + '}';
     }
+
+    /**
+     *
+     * @return
+     */
+    public double average() {
+        double sum = 0.0;
+
+        if (ratings.size() == 0) {
+            return 0.0;
+        }
+        for (Double rating : ratings) {
+            sum += rating;
+        }
+        return sum / ratings.size();
+    }
+
+    private List<String> ratedByActors = new ArrayList<>();
+
+    public List<String> getRatedByActors() {
+        return ratedByActors;
+    }
 }
 

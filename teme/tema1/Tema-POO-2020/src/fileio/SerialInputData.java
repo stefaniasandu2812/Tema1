@@ -46,4 +46,34 @@ public final class SerialInputData extends ShowInput {
                 + " numberSeason= " + numberOfSeasons
                 + ", seasons=" + seasons + "\n\n" + '}';
     }
+
+    /**
+     * This method implements the one in the
+     * ShowInput class for a serial
+     * @return rating of a serial
+     */
+    public double average() {
+        double sum = 0.0;
+
+        for (Season season : seasons) {
+            sum += season.average();
+        }
+
+        return sum / numberOfSeasons;
+    }
+
+    /**
+     * This method computes the duration of
+     * a serial by adding all seasons' durations
+     * @return the full duration of a serial
+     */
+    public int serialDuration() {
+        int duration = 0;
+
+        for (Season season : getSeasons()) {
+            duration += season.getDuration();
+        }
+
+        return duration;
+    }
 }

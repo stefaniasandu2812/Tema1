@@ -31,7 +31,7 @@ public final class ActionInputData {
      */
     private final String objectType;
     /**
-     * Sorting type: ascending or descending
+     * SortingClass type: ascending or descending
      */
     private final String sortType;
     /**
