@@ -22,6 +22,11 @@ public final class Season {
      */
     private List<Double> ratings;
 
+    /**
+     * List of actors that rated a season
+     */
+    private final List<String> ratedByActors = new ArrayList<>();
+
     public Season(final int currentSeason, final int duration) {
         this.currentSeason = currentSeason;
         this.duration = duration;
@@ -56,7 +61,7 @@ public final class Season {
 
     /**
      *
-     * @return
+     * @return average of a season
      */
     public double average() {
         double sum = 0.0;
@@ -69,8 +74,6 @@ public final class Season {
         }
         return sum / ratings.size();
     }
-
-    private List<String> ratedByActors = new ArrayList<>();
 
     public List<String> getRatedByActors() {
         return ratedByActors;
