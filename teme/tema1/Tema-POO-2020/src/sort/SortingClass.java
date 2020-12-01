@@ -17,7 +17,7 @@ public final class SortingClass {
     /**
      * This method sorts a map first by value
      * and then by key for alphabetical order,
-     * using a customised comparator
+     * using a customized comparator
      * @param map list of map from database
      * @param sortType the type of sorting
      * @return a sorted map

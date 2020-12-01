@@ -79,9 +79,9 @@ public class Commands {
                             Season season = serial.getSeasons()
                                     .get(action.getSeasonNumber() - 1);
                             if (user.getRatedSerials().get(serial.getTitle()) == null
-                                    || !season.getRatedByActors().contains(user.getUsername())) {
+                                    || !season.getRatedByUsers().contains(user.getUsername())) {
                                 season.getRatings().add(action.getGrade());
-                                season.getRatedByActors().add(user.getUsername());
+                                season.getRatedByUsers().add(user.getUsername());
                                 user.getRatedSerials().put(serial.getTitle(),
                                         action.getGrade());
                                 message = "success -> " + action.getTitle()

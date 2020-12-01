@@ -89,8 +89,6 @@ public final class Main {
         List<MovieInputData> moviesList = input.getMovies();
         List<SerialInputData> serialsList = input.getSerials();
 
-
-        //TODO add here the entry point to your implementation
         for (ActionInputData actionInputData : actionsList) {
             if (actionInputData.getActionType().equals(Constants.COMMAND)) {
                 Commands command = new Commands();

@@ -77,7 +77,6 @@ public class ActorQuery {
         HashMap<String, Double> searchedActors = new HashMap<>();
 
         for (ActorInputData actorInputData : actorsList) {
-
             /* var used to check if the actor received the award */
             int ok = 0;
             for (String award : awards) {
@@ -108,7 +107,7 @@ public class ActorQuery {
     public void filterQ(final ActionInputData action,
                         final List<ActorInputData> actorsList) {
         List<String> words = action.getFilters().get(2);
-        List<String> actorsSearched = new ArrayList<>();
+        List<String> searchedActors = new ArrayList<>();
 
         for (ActorInputData actor : actorsList) {
             int ok = 0;
@@ -125,17 +124,17 @@ public class ActorQuery {
             }
 
             if (ok == 1) {
-                actorsSearched.add(actor.getName());
+                searchedActors.add(actor.getName());
             }
         }
 
         if (action.getSortType().equals(Constants.DESCENDING)) {
-            actorsSearched.sort(Collections.reverseOrder());
+            searchedActors.sort(Collections.reverseOrder());
         } else {
-            Collections.sort(actorsSearched);
+            Collections.sort(searchedActors);
         }
 
-        message = "Query result: " + actorsSearched;
+        message = "Query result: " + searchedActors;
     }
 
 }

@@ -23,9 +23,9 @@ public final class Season {
     private List<Double> ratings;
 
     /**
-     * List of actors that rated a season
+     * List of users that rated a season
      */
-    private final List<String> ratedByActors = new ArrayList<>();
+    private final List<String> ratedByUsers = new ArrayList<>();
 
     public Season(final int currentSeason, final int duration) {
         this.currentSeason = currentSeason;
@@ -75,8 +75,8 @@ public final class Season {
         return sum / ratings.size();
     }
 
-    public List<String> getRatedByActors() {
-        return ratedByActors;
+    public List<String> getRatedByUsers() {
+        return ratedByUsers;
     }
 }
 
